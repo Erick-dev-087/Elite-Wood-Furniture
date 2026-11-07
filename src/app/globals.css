@@ -1,26 +1,146 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-serif), Georgia, serif;
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --color-warm-ivory: #F7F3ED;
+  --color-charcoal: #181818;
+  --color-elite-red: #E51B24;
+  --color-furniture-orange: #F26522;
+  --color-wood-brown: #75543D;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F7F3ED;
+  --foreground: #181818;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F7F3ED;
+  color: #181818;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F3ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4cdc5;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a89f95;
+}
+
+/* Section 13.4: main-page navigation only; matches the SVG travel duration. */
+@keyframes hero-image-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
+
+.cushion-transition {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  width: clamp(100px, 14vw, 180px);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: visible;
+  background: transparent;
+  z-index: 100;
+  opacity: 0;
+  transform: translate3d(-100%, -50%, 0);
+  pointer-events: none;
+  filter: drop-shadow(0 10px 12px rgb(24 24 24 / 18%));
+}
+
+.cushion-transition img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cushion-transition::backdrop {
+  background: transparent;
+  pointer-events: none;
+}
+
+::view-transition-group(storefront-page) {
+  animation-duration: 580ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-group(root),
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-group(.page-fade) {
+  animation-duration: 160ms;
+}
+
+::view-transition-old(.cushion-page) {
+  animation: cushion-page-out 580ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+::view-transition-new(.cushion-page) {
+  animation: cushion-page-in 580ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+::view-transition-old(.page-fade) {
+  animation: page-fade-out 160ms ease-out both;
+}
+
+::view-transition-new(.page-fade) {
+  animation: page-fade-in 160ms ease-out both;
+}
+
+/* Neither the decorative overlay nor browser snapshots capture clicks. */
+::view-transition {
+  pointer-events: none;
+}
+
+@keyframes cushion-page-out {
+  from { clip-path: inset(0); }
+  to { clip-path: inset(0 0 0 100%); }
+}
+
+@keyframes cushion-page-in {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0); }
+}
+
+@keyframes page-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cushion-transition { display: none; }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
 }

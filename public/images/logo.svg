@@ -1,0 +1,26 @@
+<svg viewBox="0 0 280 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circular Emblem -->
+  <circle cx="40" cy="40" r="36" fill="#181818" stroke="#E51B24" stroke-width="2.5" />
+  <circle cx="40" cy="40" r="32" fill="#E51B24" />
+  <path
+    d="M40 10C22.6 10 9 23.4 8 40C14 26 25 18 40 18C55 18 67 29 68 44C70 33 64 19 52 13C48 11 44 10 40 10Z"
+    fill="#FFFFFF" />
+  <path d="M17 40C17 28 27 19 40 19C52 19 61 27 63 39C58 31 50 26 40 26C30 26 22 32 17 40Z"
+    fill="#F26522" />
+  <circle cx="40" cy="40" r="12" fill="#181818" />
+  <circle cx="40" cy="40" r="9" fill="#E51B24" />
+  <circle cx="40" cy="40" r="4" fill="#FFFFFF" />
+
+  <!-- Text: ELITE WOOD -->
+  <text x="88" y="44" font-family="system-ui, -apple-system, sans-serif" font-weight="900"
+    font-size="28" letter-spacing="1">
+    <tspan fill="#E51B24">ELITE</tspan>
+    <tspan dx="8" fill="#181818">WOOD</tspan>
+  </text>
+
+  <!-- Accent line & FURNITURE -->
+  <line x1="88" y1="56" x2="100" y2="56" stroke="#E51B24" stroke-width="2.5" stroke-linecap="round" />
+  <text x="106" y="60" font-family="system-ui, -apple-system, sans-serif" font-weight="800"
+    font-size="12" letter-spacing="3.5" fill="#F26522">FURNITURE</text>
+  <line x1="205" y1="56" x2="270" y2="56" stroke="#F26522" stroke-width="2.5" stroke-linecap="round" />
+</svg>

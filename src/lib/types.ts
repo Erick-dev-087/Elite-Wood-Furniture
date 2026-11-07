@@ -35,3 +35,12 @@ export interface CategoryInfo {
   description: string;
   image: string;
 }
+
+/** Serializable fields shared by the storefront and a future CMS source. */
+export interface Testimonial {
+  id: string;
+  quote: string;
+  attribution: string;
+  category: string;
+  isPlaceholder: boolean;
+}

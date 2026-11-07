@@ -8,6 +8,12 @@ export const TAGLINE = 'Quality You Can See, Comfort You Can Feel';
 export const SITE_DESCRIPTION =
   'Premium handcrafted furniture made in Kenya. Sofas, beds, TV stands, and dining sets delivered countrywide.';
 
+export const SOCIAL_LINKS = {
+  instagram: 'https://www.instagram.com/elite_wood_furniture/',
+  facebook: 'https://www.facebook.com/elitewoodfurniture',
+  tiktok: 'https://www.tiktok.com/@elitefurniture1',
+} as const;
+
 /**
  * Build a WhatsApp click-to-chat link with a pre-filled message.
  */

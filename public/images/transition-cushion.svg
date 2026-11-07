@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" fill="none">
+  <defs>
+    <radialGradient id="fabric" cx="0.38" cy="0.3" r="0.85">
+      <stop stop-color="#F7F3ED"/>
+      <stop offset="0.65" stop-color="#DFCEB9"/>
+      <stop offset="1" stop-color="#AE8C6D"/>
+    </radialGradient>
+    <pattern id="weave" width="4" height="4" patternUnits="userSpaceOnUse">
+      <path d="M0 1h4M1 0v4" stroke="#75543D" stroke-opacity="0.12" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <path d="M19 17C59 27 119 27 161 17C150 61 150 119 161 163C120 151 60 151 19 163C30 119 30 61 19 17Z" fill="url(#fabric)" stroke="#75543D" stroke-width="2"/>
+  <path d="M19 17C59 27 119 27 161 17C150 61 150 119 161 163C120 151 60 151 19 163C30 119 30 61 19 17Z" fill="url(#weave)"/>
+  <path d="M28 27C66 35 114 35 152 27C144 65 144 115 152 153C114 144 66 144 28 153C37 115 37 65 28 27Z" stroke="#75543D" stroke-opacity="0.45" stroke-dasharray="2 3"/>
+  <path d="M36 39C61 43 80 44 99 43M38 47C34 67 34 84 36 99" stroke="white" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round"/>
+  <path d="m25 25 15 16m115-16-15 16m15 114-15-16M25 155l15-16" stroke="#75543D" stroke-opacity="0.25" stroke-width="2"/>
+</svg>
