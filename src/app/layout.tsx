@@ -9,6 +9,7 @@ import WhatsAppFab from '@/components/ui/WhatsAppFab';
 import ScrollProgress from '@/components/ui/ScrollProgress';
 import { PageTransition, PageTransitionProvider } from '@/components/ui/PageTransition';
 import { SITE_DESCRIPTION, COMPANY_NAME, TAGLINE } from '@/lib/constants';
+import { Analytics } from '@vercel/analytics/next';
 
 const dmSerif = DM_Serif_Display({
   weight: ['400'],
@@ -77,6 +78,7 @@ export default function RootLayout({
             <WhatsAppFab />
           </CartProvider>
         </PageTransitionProvider>
+        <Analytics />
       </body>
     </html>
   );
